@@ -1,0 +1,32 @@
+@import "../variables.scss"; 
+
+.header{
+    height: 275px;
+    background-color: $main__color;
+
+    &__main
+    {
+        display: flex;
+        justify-content: space-around;
+        height: 20%;
+        background-color: $header__main;
+    }
+
+    &__search
+    {
+        padding-top: 17px;
+    }
+
+    &__nav
+    {
+        display: flex;
+        padding-top: 17px;
+
+        a 
+        {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+    }
+}

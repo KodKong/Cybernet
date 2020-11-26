@@ -1,0 +1,182 @@
+@import "../variables.scss"; 
+
+.main{
+    width: 1150px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+
+    &__profile
+    {
+        position: relative;
+    }
+
+    &__profile_info
+    {
+        width: 800px;
+        height: 250px;
+        display: flex;
+        background-color: #ffffff;
+        box-shadow: $box__shadow;
+        position: absolute;
+        top: -80px;
+    }
+
+    &__posts
+    {
+        margin-top: 200px;
+        width: 800px;
+        min-height: 400px;
+        height: auto;
+        background-color: #ffffff;
+        box-shadow: $box__shadow; 
+        margin-bottom: 25px;
+        padding-bottom: 30px;
+    }
+
+    &__new-post 
+    {
+        min-height: 100px;
+        width: 700px;
+        margin: auto;
+
+        input {
+            width: 400px;
+            height: 50px;
+            margin: 30px 20px;
+            border: 1px solid $main__color;
+        }
+
+        button {
+            padding: 18px;
+            border: 1px solid $main__color;
+
+            &:hover {
+                background-color: $main__color;
+                color: #ffffff;
+            }
+        }  
+    }
+
+
+    &__avatar
+    {
+        margin: 35px 0 0 35px;
+
+        img 
+        {
+            width: 150px;
+        }
+    }
+
+    &__info
+    {
+        margin: 35px 0 0 40px;
+    }
+
+    &__name
+    {
+        font-size: 30px;
+    }
+
+    &__company_list
+    {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    &__company
+    {
+        margin-left: 10px;
+    }
+
+    &__post
+    { 
+        width: 700px;
+        margin: auto;
+        margin-top: 30px;
+        min-height: 100px;
+        box-shadow: $box__shadow__sup; 
+        display: flex;
+        
+        img {
+            width: 80px;
+            margin: 10px 20px;
+        }
+
+        &__text
+        {
+            margin-top: 10px;
+        }
+
+        &__caption
+        {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    
+}
+
+.buttons-link
+{
+    margin-top: 80px;
+
+    button {
+        font-family: "Hind", sans-serif;
+        padding: 5px 10px;
+        border: 1px solid $main__color;
+
+        &:hover{
+            background-color: $main__color;
+            color: #ffffff;
+        }
+    }
+}
+
+aside
+{
+    min-width: 300px;
+
+    .companys
+    {
+        width: 300px;
+        min-height: 300px;
+        background-color: #fff;
+        box-shadow: $box__shadow__sup; 
+
+        h1 {
+            font-size: 20px;
+            margin-left: 20px;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+
+        &__descr
+        {
+            display: flex;
+            margin: auto;
+            height: 50px;
+            padding-left: 10px;
+            padding-top: 10px;
+
+            img
+            {
+                width: 60px;
+                border: 0.5px solid $main__color;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+                margin-left: 10px;
+            }
+
+            &__text
+            {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
