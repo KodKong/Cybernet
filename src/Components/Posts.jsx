@@ -1,43 +1,17 @@
-import React from 'react'
+import React from 'react'; 
+import Post from './Post'; 
 
 function Posts() {
     return (
-        <div>
-             <div className="main__post">
-                    <div className="post-avatar">
-                       <a href="#"><img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""></img></a>
-                    </div>
-                    <div className="main__post__text">
-                        <div className="main__post__caption">
-                            Lorem, ipsum
-                        </div>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    </div>
-                </div>
-                <div className="main__post">
-                    <div className="post-avatar">
-                       <a href="#"><img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""></img></a> 
-                    </div>
-                    <div className="main__post__text">
-                        <div className="main__post__caption">
-                            Lorem, ipsum
-                        </div>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    </div>
-                </div>
-                <div className="main__post">
-                    <div className="post-avatar">
-                       <a href="#"><img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""></img></a> 
-                    </div>
-                    <div className="main__post__text">
-                        <div className="main__post__caption">
-                            Lorem, ipsum
-                        </div>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    </div>
-                </div>
+        
+    <div>
+        <Post text="Не стесняйся, скажи сколько? " />
+        <Post text="Не велика потеря"/>
+        <Post />
+        <Post />
+    </div>
                  
-        </div>
+        
     )
 }
 
