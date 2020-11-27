@@ -18,7 +18,7 @@ function My_Profile() {
                 </div>
                 <div className="buttons-link">
                     <button>Подписаться</button>
-                    <button>Связаться</button>
+                    <button class="buttons-link__second">Связаться</button>
                 </div>
             </div>
             </div>

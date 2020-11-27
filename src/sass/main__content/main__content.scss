@@ -116,6 +116,35 @@
         }
     }
     
+    &__news
+    {
+        position: relative;
+        
+
+        #hot__news
+        {
+            position: absolute;
+            top: -80px;
+            background-color: #fff;
+            margin-top: 0;
+            box-shadow: $box__shadow;
+        }
+
+        &__last
+        {
+            width: 800px;
+            min-height: 200px;
+            margin-top: 150px;
+
+            &__new
+            {
+                background: #fff;
+                box-shadow: $box__shadow;
+                margin-top: 30px;
+                min-height: 150px;
+            }
+        }
+    }
 }
 
 .buttons-link
@@ -131,6 +160,12 @@
             background-color: $main__color;
             color: #ffffff;
         }
+
+    }
+
+    &__second
+    {
+        margin-left: 10px;
     }
 }
 

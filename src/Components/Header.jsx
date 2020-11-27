@@ -10,15 +10,15 @@ function Header() {
             </div>
             <div className="header__nav">
                 <div className="home">
-                   <a href="#">
+                   <a href="/Home">
                     <img src="" alt=""></img>
-                    Home
+                    home
                    </a>
                     
                 </div>
                 <div className="header__network">
-                    <a href="#"><img src="" alt=""></img>
-                        My network</a>
+                    <a href="/News"><img src="" alt=""></img>
+                        news</a>
                 </div>
                 <div className="header__jobs">
                     <a href="#">

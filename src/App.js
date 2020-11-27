@@ -1,27 +1,22 @@
 import React from 'react'; 
 import Header from './Components/Header'; 
-import MyProfile from './Components/My_Profile'; 
-import NewPost from './Components/Posts/New_Post';
-import Posts from './Components/Posts/Posts'; 
+import Home from './Components/Home/Home'
 import Companys from './Components/Companys/Companys';
+import News from './Components/News/News'
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Header/>
     <section className="main">
-        <div className="main__profile">
-            <MyProfile />
-            <div className="main__posts">
-                <NewPost />
-                <Posts/>
-            </div>
-        </div>
+        <Route path="/Home" component={Home} />
+        <Route path="/News" component={News} />
         <aside>   
         <Companys />
         </aside> 
     </section>
-    </div>
+    </BrowserRouter>
   );
 }
 
