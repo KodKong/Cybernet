@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
     return (
@@ -10,15 +11,15 @@ function Header() {
             </div>
             <div className="header__nav">
                 <div className="home">
-                   <a href="/Home">
+                   <NavLink to="/Home">
                     <img src="" alt=""></img>
                     home
-                   </a>
+                   </NavLink>
                     
                 </div>
                 <div className="header__network">
-                    <a href="/News"><img src="" alt=""></img>
-                        news</a>
+                    <NavLink to="/News"><img src="" alt=""></img>
+                        news</NavLink>
                 </div>
                 <div className="header__jobs">
                     <a href="#">

@@ -10,8 +10,8 @@ function App() {
     <BrowserRouter>
       <Header/>
     <section className="main">
-        <Route path="/Home" component={Home} />
-        <Route path="/News" component={News} />
+        <Route exact path="/Home" component={Home} />
+        <Route exact path="/News" component={News} />
         <aside>   
         <Companys />
         </aside> 
