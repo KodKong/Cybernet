@@ -5,13 +5,13 @@ import Companys from './Components/Companys/Companys';
 import News from './Components/News/News'
 import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <Header/>
     <section className="main">
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/News" component={News} />
+        <Route exact path="/Home" render={() => <Home />} />
+        <Route exact path="/News" render={() => <News dataNews={props.state.newsPage}/>} />
         <aside>   
         <Companys />
         </aside> 

@@ -1,24 +1,50 @@
 import React from 'react'
-import New from './New'
-import HotNew from './HotNew'
+
+function New(props) {
+    return (
+        <div className="main__news__last__new">
+            <img src={props.img} alt=""/>
+             <div className="descr">
+             <a href=""><h1>{props.title}</h1>
+                  {props.description}
+                  </a>
+             </div>
+             
+             
+        </div>
+    )
+}
+
+function HotNew(props) {
+    return (
+        <div className="main__news__last" id="hot__news">
+            <img src={props.img} alt=""/>
+           <div className="descr">
+            <h1>{props.title}</h1>
+                {props.description}
+                  
+             </div> 
+        </div>
+    )
+}
 
 
-export default function News() {
+export default function News(props) {
     return (
         <div className="main__news">  
-            <HotNew title="Человеки пауки ограбили банк" 
-            description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem cupiditate t" 
-            img="https://vokrug.tv/pic/news/c/7/f/8/c7f8b6209c96e2c3252630a28f8b02a1.jpg"
-            />
+            {
+                props.dataNews.hotNew.map(item => <HotNew title={item.title} 
+                    description={item.description}
+                    img={item.img}
+                    />)
+            }
          <div className="main__news__last">
-             <New title="Новости из Intel" 
-             description="Intel продолжит вкладывать средства в собственный 7-нм техпроцесс, а также планирует освоит 5-нм и 3-нм технологии" 
-             img="https://i.playground.ru/p/qUgPS4hXe9FPHKg52s58TQ.jpeg"
-             />
-             <New title="Доктор через экран" 
-             description="«Сбер» запустил онлайн-сервис постановки диагноза при помощи искусственного интеллекта" 
-             img="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png"
-             />
+            {
+               props.dataNews.news.map(item => <New title={item.title} 
+                description={item.description} 
+                img={item.img}
+                />)
+            }
          </div>
      </div>
     )
