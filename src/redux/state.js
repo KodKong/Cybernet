@@ -1,4 +1,4 @@
-import {drawPage} from './render'
+
 let state = {
     newsPage: {
         hotNew:  [{
@@ -27,8 +27,8 @@ let state = {
 
 export function addPost(item) 
 {
+  console.log("uuuu"); 
   state.savePost.push(item); 
-  drawPage(state); 
 }
 
 export default state ; 
