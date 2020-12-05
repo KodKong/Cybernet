@@ -3,13 +3,13 @@ import MyProfile from './My_Profile';
 import NewPost from './New_Post';
 import Posts from './Posts'; 
 
-function Home() {
+function Home(props) {
     return (
         <div className="main__profile">
             <MyProfile />
             <div className="main__posts">
-                <NewPost />
-                <Posts/>
+                <NewPost addPost={props.addPost}/>
+                <Posts posts={props.posts}/>
             </div>
         </div>
     )

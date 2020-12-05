@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './sass/main.scss';
-import App from './App';
-import state from './redux/state'
+import state from './redux/state';
+import App from './App'
+import {addPost} from './redux/state'
+
+
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App state={state}/>
+    <App state={state} addPost={addPost}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

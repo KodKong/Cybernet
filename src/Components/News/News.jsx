@@ -28,7 +28,6 @@ function HotNew(props) {
     )
 }
 
-
 export default function News(props) {
     return (
         <div className="main__news">  

@@ -1,3 +1,4 @@
+import {drawPage} from './render'
 let state = {
     newsPage: {
         hotNew:  [{
@@ -15,8 +16,19 @@ let state = {
             description: "«Сбер» запустил онлайн-сервис постановки диагноза при помощи искусственного интеллекта", 
             img: "https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png"
           }]   
-  }
+  }, 
+  savePost:
+  [
+    {id:1, text: "Не стесняйся, скажи сколько?"}, 
+    {id:2, text: "Не велика потеря"}
+  ]
     
+}
+
+export function addPost(item) 
+{
+  state.savePost.push(item); 
+  drawPage(state); 
 }
 
 export default state ; 
