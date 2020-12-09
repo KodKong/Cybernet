@@ -8,7 +8,7 @@ function Home(props) {
         <div className="main__profile">
             <MyProfile />
             <div className="main__posts">
-                <NewPost addPost={props.addPost}/>
+                <NewPost addPost={props.addPost} updatePost={props.updatePost} posts={props.posts}/>
                 <Posts posts={props.posts}/>
             </div>
         </div>

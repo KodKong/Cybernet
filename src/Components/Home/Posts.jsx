@@ -3,7 +3,7 @@ import Post from './Post';
 
 function Posts(props) {
 
-    let statePosts = props.posts.savePost.map(item => <Post text={item.text} />); 
+    let statePosts = props.posts.profilePage.savePost.map(item => <Post text={item.text} />); 
     
     return (
     <div>

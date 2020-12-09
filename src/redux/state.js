@@ -17,24 +17,35 @@ let state = {
             img: "https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png"
           }]   
   }, 
-  savePost:
+  profilePage: 
+  {
+    savePost:
   [
     {id:1, text: "Не стесняйся, скажи сколько?"}, 
     {id:2, text: "Не велика потеря"}
-  ]
+    ],
+    newPost: ''
+}
     
 }
 
-export function addPost(item) 
+export function addPost() 
 {
   let id = 3; 
   let newPost = {
     id: id, 
-    text: item 
+    text: state.profilePage.newPost 
   };
-  state.savePost.push(newPost); 
+  state.profilePage.savePost.push(newPost); 
+  state.profilePage.newPost = ''; 
   drawPage(state); 
   id++; 
+}
+
+export function updatePost (item)
+{
+  state.profilePage.newPost = item; 
+  drawPage(state); 
 }
 
 export default state ; 
