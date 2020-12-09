@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../App';
+import {addPost} from './state'
 
-export let drawPage = (props) =>
+export let drawPage = (state) =>
 {
 ReactDOM.render(
   <React.StrictMode>
-    <App state={props.state} addPost={props.addPost}/>
+    <App state={state} addPost={addPost}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

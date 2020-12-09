@@ -7,6 +7,7 @@ function New_Post(props) {
     let addPost = () => {
         let textPost = inputPost.current.value;
         props.addPost(textPost);  
+        inputPost.current.value = ''; 
     }; 
 
     return (
