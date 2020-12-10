@@ -1,12 +1,22 @@
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './sass/main.scss';
 import state from './redux/state';
-import { drawPage } from './redux/render';
+import App from './App';
+import {addPost, updatePost, subscribe} from './redux/state'
 
 
-
+let drawPage = (state) =>
+{
+ReactDOM.render(
+  <React.StrictMode>
+    <App state={state} addPost={addPost} updatePost={updatePost}/>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+} 
 drawPage(state); 
-
+subscribe(drawPage); 
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App state={state} addPost={addPost}/>

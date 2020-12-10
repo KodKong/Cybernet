@@ -1,4 +1,7 @@
-import { drawPage } from "./render"; 
+let drawPage = () => {
+  console.log("f"); 
+}
+
 let state = {
     newsPage: {
         hotNew:  [{
@@ -46,6 +49,11 @@ export function updatePost (item)
 {
   state.profilePage.newPost = item; 
   drawPage(state); 
+}
+
+export function subscribe (subscriber)
+{
+  drawPage = subscriber; 
 }
 
 export default state ; 
