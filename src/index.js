@@ -10,7 +10,7 @@ let drawPage = (state) =>
 {
 ReactDOM.render(
   <React.StrictMode>
-    <App state={store.getState()} addPost={store.addPost} updatePost={store.updatePost}/>
+    <App state={state} addPost={store.addPost.bind(store)} updatePost={store.updatePost.bind(store)}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
