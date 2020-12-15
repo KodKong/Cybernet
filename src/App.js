@@ -11,7 +11,7 @@ function App(props) {
     <BrowserRouter>
       <Header/>
     <section className="main">
-        <Route exact path="/Home" render={() => <Home posts={props.state} addPost={props.addPost} updatePost={props.updatePost}/>} />
+        <Route exact path="/Home" render={() => <Home posts={props.state} dispatch={props.dispatch}/>} />
         <Route exact path="/News" render={() => <News dataNews={props.state.newsPage}/>} />
         <aside>   
         <Companys />

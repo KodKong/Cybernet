@@ -34,34 +34,35 @@ let store = {
     return this._state; 
   },
 
-  drawPage: () => {
-    console.log("f");
-  }, 
-
-  addPost() 
-  {
-  let id = 3; 
-  let newPost = {
-    id: id, 
-    text: this._state.profilePage.newPost 
-  };
-  this._state.profilePage.savePost.push(newPost); 
-  this._state.profilePage.newPost = ''; 
-  this.drawPage(this._state); 
-  id++; 
-  }, 
-
   subscribe (subscriber)
   {
   this.drawPage = subscriber; 
   }, 
 
-
-  updatePost(item)
-  {
-  this._state.profilePage.newPost = item; 
-  this.drawPage(this._state); 
+  drawPage: () => {
+    console.log("f");
   }, 
+
+  dispatch(action)
+  {
+    if (action.type === "ADD-POST")
+    {
+      let id = 3; 
+    let newPost = {
+    id: id, 
+    text: this._state.profilePage.newPost 
+    };
+    this._state.profilePage.savePost.push(newPost); 
+    this._state.profilePage.newPost = ''; 
+    this.drawPage(this._state); 
+    id++; 
+    }else if (action.type === "UPDATE-POST")
+    {
+      this._state.profilePage.newPost = action.newPost; 
+      this.drawPage(this._state); 
+    } 
+
+  }
 }
 
 export default store; 

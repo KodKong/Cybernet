@@ -5,13 +5,13 @@ function New_Post(props) {
     let inputPost = React.createRef(); 
     
     let addPost = () => {
-        props.addPost();  
+        props.dispatch({ type: 'ADD-POST'});  
     }; 
 
     let updatePost = () => 
     {
         let textPost = inputPost.current.value; 
-        props.updatePost(textPost); 
+        props.dispatch({ type: 'UPDATE-POST', newPost: textPost }); 
     }; 
 
     return (
