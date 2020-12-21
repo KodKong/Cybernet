@@ -1,4 +1,5 @@
-
+const updatePost = 'UPDATE-POST'; 
+const addPost = 'ADD-POST'; 
 let store = {
   _state: {
     newsPage: {
@@ -45,7 +46,7 @@ let store = {
 
   dispatch(action)
   {
-    if (action.type === "ADD-POST")
+    if (action.type === addPost)
     {
       let id = 3; 
     let newPost = {
@@ -56,13 +57,24 @@ let store = {
     this._state.profilePage.newPost = ''; 
     this.drawPage(this._state); 
     id++; 
-    }else if (action.type === "UPDATE-POST")
+    }else if (action.type === updatePost)
     {
       this._state.profilePage.newPost = action.newPost; 
       this.drawPage(this._state); 
     } 
 
-  }
+  },
+
 }
 
 export default store; 
+
+  export const addPostActionCreator = () => 
+  {
+    return {type: addPost}; 
+  }
+
+  export const updatePostActionCreator = (textPost) => 
+  {
+    return {type: updatePost, newPost: textPost}; 
+  }

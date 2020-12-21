@@ -13,25 +13,17 @@ function Header() {
                 <div className="home">
                    <NavLink to="/Home">
                     <img src="" alt=""></img>
-                    home
+                    Главная
                    </NavLink>
                     
                 </div>
                 <div className="header__network">
                     <NavLink to="/News"><img src="" alt=""></img>
-                        news</NavLink>
-                </div>
-                <div className="header__jobs">
-                    <a href="#">
-                        <img src="" alt=""></img>
-                    Jobs
-                    </a>
+                        Новости</NavLink>
                 </div>
                 <div className="header__messaging">
-                    <a href="#">
-                        <img src="" alt=""></img>
-                        Messaging
-                    </a>
+                <NavLink to="/Messages"><img src="" alt=""></img>
+                        Сообщения</NavLink>
                 </div>
                 <div className="header__notifications">
                     <a href="#"> 
