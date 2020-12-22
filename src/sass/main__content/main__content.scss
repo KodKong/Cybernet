@@ -264,10 +264,27 @@ aside
 
     &__dialogs
     {
+        padding-top: 10px;
         width: 350px;
         background-color: #fff;
         margin-top: 0;
         box-shadow: $box__shadow;
+        max-height: 700px;
+        overflow: auto;
+        img 
+        {
+            width: 65px;
+        }
+    }
+    &__dialog
+    {
+        margin: 0 0 20px 20px;
+        display: flex;
+        p 
+        {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
     }
     &__messages
     {
@@ -276,5 +293,38 @@ aside
         margin-top: 0;
         box-shadow: $box__shadow;
         margin-left: 25px;
+        &__input
+        {
+            display: flex;
+            position: absolute;
+            bottom: 0px;  
+            input {
+                width: 250px;
+                height: 25px;
+                margin: 0 10px 20px 20px;
+                border: 1px solid $main__color;
+            }
+    
+            button {
+                margin: 0 10px 20px 0;
+                border: 1px solid $main__color;
+    
+                &:hover {
+                    background-color: $main__color;
+                    color: #ffffff;
+                }
+            }  
+        }
+    }
+    &__message
+    {
+        &__author
+        {
+            margin: 15px 0 10px 20px;
+        }
+        &__text
+        {
+            margin-left: 20px;
+        }
     }
 }
