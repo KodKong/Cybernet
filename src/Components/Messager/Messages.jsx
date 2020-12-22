@@ -1,61 +1,27 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Dialogs from "./Dialogs";
+import Message from "./Dialogs_messages"
 
-function Messages() {
+function Messages(props) {
+     
+    let inputMessage = React.createRef(); 
+
     return (
        <div className="messages"> 
        <div className="messages__wrapper">
             <div class='messages__dialogs'>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
-                <div className="messages__dialog">
-                <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""/>
-                <NavLink to="/Messages"><p>Артем Пананин</p></NavLink>
-                </div>
+               
+            {
+                props.messagesState.dialogsStore.map(item => <Dialogs img={item.avatar} name={item.name}/>)
+            }; 
+               
             </div>
             <div className="messages__messages">
-               
-                
-                <div className="messages__message">
-                    <div className="messages__message__author">Артем</div>
-                    <div className="messages__message__text">здорова</div>
-                </div>
-                <div className="messages__message">
-                    <div className="messages__message__author">Артем</div>
-                    <div className="messages__message__text">здорова</div>
-                </div>
-                <div className="messages__message">
-                    <div className="messages__message__author">Артем</div>
-                    <div className="messages__message__text">здорова</div>
-                </div>
-                <div className="messages__message">
-                    <div className="messages__message__author">Артем</div>
-                    <div className="messages__message__text">здорова</div>
-                </div>
+               {
+                   props.messagesState.messageStore.map(item => <Message name={item.name} text={item.text} />)
+               }; 
                 <div className="messages__messages__input">
-                <input type="text"/>
+                <input type="text" ref={inputMessage}/>
                 <button>Отправить</button>
                 </div>
                 
