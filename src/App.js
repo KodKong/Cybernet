@@ -14,7 +14,7 @@ function App(props) {
     <section className="main">
         <Route exact path="/Home" render={() => <Home posts={props.state} dispatch={props.dispatch}/>} />
         <Route exact path="/News" render={() => <News dataNews={props.state.newsPage}/>} />
-        <Route exact path="/Messages" render={() => <Messages messagesState={props.state.messagesStore}/>} />
+        <Route exact path="/Messages" render={() => <Messages messagesState={props.state.messagesStore} dispatch={props.dispatch}/>} />
         <aside>   
         <Companys />
         </aside> 

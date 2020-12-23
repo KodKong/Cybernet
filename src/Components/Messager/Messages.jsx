@@ -1,15 +1,28 @@
 import React from 'react'
 import Dialogs from "./Dialogs";
 import Message from "./Dialogs_messages"
+import { addMessageActionCreator, updateMessageActionCreator } from "../../redux/state";
 
 function Messages(props) {
      
-    let inputMessage = React.createRef(); 
+    
+
+    let addMessage = () => {
+        props.dispatch(addMessageActionCreator()); 
+    }
+
+    let updateMessage = (e) => {
+        let body = e.target.value; 
+        let action = updateMessageActionCreator(body); 
+        props.dispatch(action); 
+    }
+
+    let suka = props.messagesState.messageStore.map(item => <Message name={item.name} text={item.text} />); 
 
     return (
        <div className="messages"> 
        <div className="messages__wrapper">
-            <div class='messages__dialogs'>
+            <div className='messages__dialogs'>
                
             {
                 props.messagesState.dialogsStore.map(item => <Dialogs img={item.avatar} name={item.name}/>)
@@ -18,11 +31,11 @@ function Messages(props) {
             </div>
             <div className="messages__messages">
                {
-                   props.messagesState.messageStore.map(item => <Message name={item.name} text={item.text} />)
+                   suka 
                }; 
                 <div className="messages__messages__input">
-                <input type="text" ref={inputMessage}/>
-                <button>Отправить</button>
+                <input type="text"  onChange={updateMessage} value={props.messagesState.newMessage}/>
+                <button onClick={addMessage}>Отправить</button>
                 </div>
                 
             </div>

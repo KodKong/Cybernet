@@ -103,15 +103,22 @@ messagesStore: {
       this._state.profilePage.newPost = ''; 
       this.drawPage(this._state); 
       id++; 
-    }else if (action.type === updatePost)
+    }
+    
+    else if (action.type === updatePost)
     {
       this._state.profilePage.newPost = action.newPost; 
       this.drawPage(this._state); 
-    }else if (action.type === updateMessage)
+    }
+    
+    else if (action.type === updateMessage)
     {
-      this._state.messagesStore.messageStore = action.newMessage; 
+      this._state.messagesStore.newMessage = action.newMessage; 
       this.drawPage(this._state); 
-    }else if (action.type === addMessage)
+     
+    }
+    
+    else if (action.type === addMessage)
     {
       let id = 6; 
       let newMessage = {
