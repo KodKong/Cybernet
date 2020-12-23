@@ -1,5 +1,7 @@
+import post_reducer from "./post-reducer";
+import message_reducer from "./message-reducer";
 const updatePost = 'UPDATE-POST'; 
-const addPost = 'ADD-POST'; 
+const addPost = 'ADD-POST';
 const updateMessage = 'UPDATE-MESSAGE'; 
 const addMessage = 'ADD-MESSAGE'; 
 let store = {
@@ -90,46 +92,15 @@ messagesStore: {
     console.log("f");
   }, 
 
+
+  
+
   dispatch(action)
   {
-    if (action.type === addPost)
-    {
-      let id = 3; 
-      let newPost = {
-      id: id, 
-      text: this._state.profilePage.newPost 
-      };
-      this._state.profilePage.savePost.push(newPost); 
-      this._state.profilePage.newPost = ''; 
-      this.drawPage(this._state); 
-      id++; 
-    }
-    
-    else if (action.type === updatePost)
-    {
-      this._state.profilePage.newPost = action.newPost; 
-      this.drawPage(this._state); 
-    }
-    
-    else if (action.type === updateMessage)
-    {
-      this._state.messagesStore.newMessage = action.newMessage; 
-      this.drawPage(this._state); 
+     this._state.profilePage = post_reducer(this._state.profilePage, action); 
+     this._state.messagesStore = message_reducer(this._state.messagesStore, action); 
+     this.drawPage(this._state);
      
-    }
-    
-    else if (action.type === addMessage)
-    {
-      let id = 6; 
-      let newMessage = {
-      id: id, 
-      text: this._state.messagesStore.newMessage 
-      };
-      this._state.messagesStore.messageStore.push(newMessage); 
-      this._state.messagesStore.newMessage = ''; 
-      this.drawPage(this._state); 
-      id++; 
-    }
 
   },
 
