@@ -1,6 +1,16 @@
 const updatePost = 'UPDATE-POST'; 
 const addPost = 'ADD-POST';
- const post_reducer = (state, action) =>
+
+let initialState =  {
+    savePost:
+  [
+    {id:1, text: "Не стесняйся, скажи сколько?"}, 
+    {id:2, text: "Не велика потеря"}
+    ],
+    newPost: ''
+  }; 
+
+ const post_reducer = (state = initialState, action) =>
 {
     switch(action.type)
     {
