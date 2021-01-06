@@ -1,25 +1,24 @@
 import React from 'react'
-import { addPostActionCreator, updatePostActionCreator } from "../../redux/state";
+// import {  } from "./New_Post_Container";
 
 
 function New_Post(props) {
 
-     
+     let newPostElement = React.createRef(); 
     
     let addPost = () => {
-        props.dispatch(addPostActionCreator());  
+        props.addPost();   
     }; 
 
-    let updatePost = (e) => 
+    let updatePost = () => 
     {
-        let textPost = e.target.value;
-        let action = updatePostActionCreator(textPost); 
-        props.dispatch(action); 
+        let textPost = newPostElement.current.value; 
+        props.updatePostText(textPost); 
     }; 
 
     return (
         <div className="main__new-post">
-                    <input type="text" placeholder="New post"  onChange={updatePost} value={props.posts.profilePage.newPost}></input>
+                    <input type="text" placeholder="New post"  onChange={updatePost} value={props.posts.profilePage.newPost} ref={newPostElement}></input>
                     
                    <button onClick={addPost}> Опубликовать </button>
                     

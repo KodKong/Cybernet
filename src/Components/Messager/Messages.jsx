@@ -1,23 +1,20 @@
 import React from 'react'
 import Dialogs from "./Dialogs";
 import Message from "./Dialogs_messages"
-import { addMessageActionCreator, updateMessageActionCreator } from "../../redux/state";
+
 
 function Messages(props) {
      
-    
+    let onChange = React.createRef(); 
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator()); 
+        props.addMes(); 
     }
 
     let updateMessage = (e) => {
-        let body = e.target.value; 
-        let action = updateMessageActionCreator(body); 
-        props.dispatch(action); 
+        let body = onChange.current.value; 
+        props.updateMes(body); 
     }
-
-    let suka = props.messagesState.messageStore.map(item => <Message name={item.name} text={item.text} />); 
 
     return (
        <div className="messages"> 
@@ -31,10 +28,10 @@ function Messages(props) {
             </div>
             <div className="messages__messages">
                {
-                   suka 
+                  props.messagesState.messageStore.map(item => <Message name={item.name} text={item.text} />)
                }; 
                 <div className="messages__messages__input">
-                <input type="text"  onChange={updateMessage} value={props.messagesState.newMessage}/>
+                <input type="text"  onChange={updateMessage} value={props.messagesState.newMessage} ref={onChange}/>
                 <button onClick={addMessage}>Отправить</button>
                 </div>
                 
