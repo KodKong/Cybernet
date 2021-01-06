@@ -8,7 +8,7 @@ function Home(props) {
         <div className="main__profile">
             <MyProfile />
             <div className="main__posts">
-                <New_Post_Container  dispatch={props.dispatch} posts={props.posts}/>
+                <New_Post_Container  />
                 <Posts posts={props.posts}/>
             </div>
         </div>
