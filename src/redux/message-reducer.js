@@ -49,24 +49,28 @@ let initialState = {
 const message_reducer = (state = initialState, action) => 
 {
 
+    let stateCopy = {...state}; 
+    stateCopy.dialogsStore = [...state.dialogsStore]; 
+    stateCopy.messageStore = [...state.messageStore]; 
+
     switch(action.type)
     {
         case updateMessage: 
         {
-            state.newMessage = action.newMessage; 
-            return state; 
+            stateCopy.newMessage = action.newMessage; 
+            return stateCopy; 
         }
         case addMessage: 
         {
             let id = 6; 
             let newMessage = {
             id: id, 
-            text: state.newMessage 
+            text: stateCopy.newMessage 
             };
-            state.messageStore.push(newMessage); 
-            state.newMessage = ''; 
+            stateCopy.messageStore.push(newMessage); 
+            stateCopy.newMessage = ''; 
             id++; 
-            return state; 
+            return stateCopy; 
         }
         default: return state; 
     }

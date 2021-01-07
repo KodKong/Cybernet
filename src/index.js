@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import './sass/main.scss';
 import store from './redux/redux-store';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 
 
-let drawPage = (state) =>
+let drawPage = () =>
 {
 ReactDOM.render(
-  <React.StrictMode>
-    <App state={state} dispatch={store.dispatch.bind(store)}/>
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Provider store={store}>
+    <App />
+    </Provider>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 } 

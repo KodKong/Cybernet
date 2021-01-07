@@ -8,12 +8,12 @@ function Messages(props) {
     let onChange = React.createRef(); 
 
     let addMessage = () => {
-        props.addMes(); 
+        props.addMessage(); 
     }
 
     let updateMessage = (e) => {
         let body = onChange.current.value; 
-        props.updateMes(body); 
+        props.updateMessage(body); 
     }
 
     return (
