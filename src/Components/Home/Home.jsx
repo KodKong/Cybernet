@@ -1,15 +1,15 @@
 import React from 'react';
 import MyProfile from './My_Profile'; 
 import New_Post_Container from './New_Post_Container';
-import Posts from './Posts'; 
+import Posts_Container from './Posts_Container';
 
-function Home(props) {
+function Home() {
     return (
         <div className="main__profile">
             <MyProfile />
             <div className="main__posts">
-                <New_Post_Container  dispatch={props.dispatch} posts={props.posts}/>
-                <Posts posts={props.posts}/>
+                <New_Post_Container  />
+                <Posts_Container />
             </div>
         </div>
     )

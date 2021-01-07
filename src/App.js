@@ -12,8 +12,8 @@ function App(props) {
     <div>
       <Header/>
     <section className="main">
-        {/* <Route exact path="/Home" render={() => <Home posts={props.state} dispatch={props.dispatch}/>} />
-        <Route exact path="/News" render={() => <News dataNews={props.state.newsPage}/>} /> */}
+        <Route exact path="/Home" render={() => <Home />} />
+        {/* <Route exact path="/News" render={() => <News dataNews={props.state.newsPage}/>} />  */}
         <Route exact path="/Messages" render={() => <Messages_Container/>} />
         <aside>   
         <Companys />

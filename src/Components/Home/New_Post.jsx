@@ -18,7 +18,7 @@ function New_Post(props) {
 
     return (
         <div className="main__new-post">
-                    <input type="text" placeholder="New post"  onChange={updatePost} value={props.posts.profilePage.newPost} ref={newPostElement}></input>
+                    <input type="text" placeholder="New post"  onChange={updatePost} value={props.posts.newPost} ref={newPostElement}></input>
                     
                    <button onClick={addPost}> Опубликовать </button>
                     

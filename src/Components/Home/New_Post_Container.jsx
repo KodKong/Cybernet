@@ -25,19 +25,19 @@ import { connect } from 'react-redux';
 
 let mapStateToProps = (state) => {
     return {
-    posts: state.initialState
+    posts: state.profilePage
     }
 };
 
-let mapDispatchToProps = (state) => 
+let mapDispatchToProps = (dispatch) => 
 {
     return {
         updatePostText: (text) => {
             let action = updatePostActionCreator(text); 
-            state.dispatch(action); 
+            dispatch(action); 
         }, 
         addPost: () => {
-            state.dispatch(addPostActionCreator());
+            dispatch(addPostActionCreator());
         }
     }
 }

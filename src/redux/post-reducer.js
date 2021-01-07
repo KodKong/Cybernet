@@ -12,6 +12,9 @@ let initialState =  {
 
  const post_reducer = (state = initialState, action) =>
 {
+    let stateCopy = {...state}; 
+    stateCopy.savePost = [...state.savePost]; 
+
     switch(action.type)
     {
         case addPost: 
@@ -19,17 +22,17 @@ let initialState =  {
             let id = 3; 
             let newPost = {
             id: id, 
-            text: state.newPost 
+            text: stateCopy.newPost 
             };
-            state.savePost.push(newPost); 
-            state.newPost = '';  
+            stateCopy.savePost.push(newPost); 
+            stateCopy.newPost = '';  
             id++; 
-            return state; 
+            return stateCopy; 
         }
         case updatePost: 
         {
-            state.newPost = action.newPost;
-            return state; 
+            stateCopy.newPost = action.newPost;
+            return stateCopy; 
         }
         default: return state; 
     }

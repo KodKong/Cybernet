@@ -17,8 +17,8 @@ function Posts(props) {
  
         </div>)
   }
-
-  let statePosts = props.posts.profilePage.savePost.map(item => <Post text={item.text} />); 
+  debugger
+  let statePosts = props.posts.savePost.map(item => <Post text={item.text} />); 
     
     return (
     <div>
