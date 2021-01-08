@@ -5,11 +5,7 @@ const SET_USER = "SET_USER";
 let initialState = 
 {
     users: 
-    [
-        {id: 1, fullName: "Finn Jordan", followed: true, status: "I love orange", location: {city: "Berlin", country: "Germany"}}, 
-        {id: 2, fullName: "Kyrie James", followed: false, status: "I love apple", location: {city: "Berlin", country: "Germany"}}, 
-        {id: 3, fullName: "Michel Harden", followed: true, status: "I love kiwi", location: {city: "Berlin", country: "Germany"}}, 
-        {id: 4, fullName: "Dancan Herro", followed: true, status: "I love raspberry", location: {city: "Berlin", country: "Germany"}}        
+    [      
     ]
 }; 
 
