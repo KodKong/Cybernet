@@ -5,10 +5,7 @@ function Header() {
     return (
         <header className="header">
         <div className="header__main">
-            <div className="header__search">
-                <img src="" alt=""></img>
-                <input type="text" placeholder="Search"></input>
-            </div>
+            
             <div className="header__nav">
                 <div className="home">
                    <NavLink to="/Home">
@@ -27,8 +24,8 @@ function Header() {
                 </div>
                 <div className="header__notifications">
                     <a href="#"> 
-                        <img src="" alt=""></img>
-                        Notifications
+                    <NavLink to="/Users"><img src="" alt=""></img>
+                        Пользователи</NavLink>
                     </a>
                 </div>
                 <div className="header__profile-header">
