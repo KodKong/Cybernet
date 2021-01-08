@@ -76,6 +76,14 @@ const message_reducer = (state = initialState, action) =>
     }
 }
 
+export const updateMessageActionCreator = (text) =>
+  {
+    return {type: updateMessage, newMessage: text}
+  }
 
+  export const addMessageActionCreator = () =>
+  {
+    return {type: addMessage}
+  }
 
 export default message_reducer; 

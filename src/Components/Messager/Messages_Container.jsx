@@ -1,6 +1,6 @@
 import React from 'react'
 import Messages from "./Messages";
-import { addMessageActionCreator, updateMessageActionCreator } from "../../redux/state";
+import { addMessageActionCreator, updateMessageActionCreator } from "../../redux/message-reducer";
 import { connect } from 'react-redux';
 
 // function Messages_Container(props) {

@@ -8,8 +8,7 @@ import { Provider } from 'react-redux';
 
 
 
-let drawPage = () =>
-{
+
 ReactDOM.render(
   <BrowserRouter>
   <Provider store={store}>
@@ -18,11 +17,5 @@ ReactDOM.render(
     </BrowserRouter>,
   document.getElementById('root')
 );
-} 
-drawPage(store.getState()); 
-store.subscribe(() =>
-{
-  let state = store.getState()
-  drawPage(state);
-}); 
+
 

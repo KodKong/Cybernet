@@ -10,7 +10,7 @@ let initialState =  {
     newPost: ''
   }; 
 
- const post_reducer = (state = initialState, action) =>
+const post_reducer = (state = initialState, action) =>
 {
     let stateCopy = {...state}; 
     stateCopy.savePost = [...state.savePost]; 
@@ -37,4 +37,14 @@ let initialState =  {
         default: return state; 
     }
 }
+
+export const addPostActionCreator = () => 
+  {
+    return {type: addPost}; 
+  }
+
+  export const updatePostActionCreator = (textPost) => 
+  {
+    return {type: updatePost, newPost: textPost}; 
+  }
 export default post_reducer; 
