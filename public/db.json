@@ -1,0 +1,38 @@
+{
+    "items": [
+    {
+      "fullName": "Finn Jordan",
+      "id": 1,
+      "photos": null,
+      "status": "I love orange",
+      "followed": true, 
+      "location": {"city": "Berlin", "country": "Germany"}
+    },
+    {
+        "fullName": "Kyrie James",
+        "id": 2,
+        "photos": "https://games.mail.ru/hotbox/content_files/game/2020/06/16/aed1e04647ec4b64ad63215ef6f57898.jpg",
+        "status": "I love apple",
+        "followed": false, 
+        "location": {"city": "New-York", "country": "Usa"}
+    },
+    {
+        "fullName": "Michel Harden",
+        "id": 3,
+        "photos": "https://games.mail.ru/hotbox/content_files/game/2020/06/16/aed1e04647ec4b64ad63215ef6f57898.jpg",
+        "status": "I love kiwi",
+        "followed": false, 
+        "location": {"city": "Los-Santos", "country": "Usa"}
+    },
+    {
+        "fullName": "Dancan Herro",
+        "id": 4,
+        "photos": "https://games.mail.ru/hotbox/content_files/game/2020/06/16/aed1e04647ec4b64ad63215ef6f57898.jpg",
+        "status": "I love raspberry",
+        "followed": true, 
+        "location": {"city": "Toronto", "country": "Canada"}
+    }
+    ],
+    "totalCount": 30,
+    "error": null
+  }
