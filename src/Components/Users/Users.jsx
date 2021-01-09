@@ -1,24 +1,24 @@
-import * as axios from 'axios'
 import React from 'react'
+import * as axios from 'axios'
 import userImage from "../../img/user-image.png";
-function Users(props) {
-   
-    function showUsers() { 
-        if(props.users.length === 0)
+
+
+class Users extends React.Component {
+    constructor(props) {
+        super(props); 
+        if(this.props.users.length === 0)
         {
         axios.get("http://localhost:3000/db.json")
         .then(response => {
-            props.setUsersAC(response.data.items)
+            this.props.setUsersAC(response.data.items)
         }); 
         }
-   }
-    
+    }
 
-
-    return <div>
-        <button onClick={showUsers}>Отобразить</button>
+    render() {  
+       return <div>
         {
-            props.users.map(item => 
+            this.props.users.map(item => 
                 <div className="user">
                 <div className="user__img">
                 <img src={item.photos ? item.photos : userImage} alt=""/>
@@ -27,8 +27,8 @@ function Users(props) {
                     <h1>{item.fullName}</h1>
                     <p className="user__descr__status">{item.status}</p>
                     {
-                        item.followed ? <button onClick={() => {props.unfollowAC(item.id)}} className="user__descr__button">unfollow</button> : 
-                        <button onClick={() => {props.followAC(item.id)}} className="user__descr__button">follow</button>
+                        item.followed ? <button onClick={() => {this.props.unfollowAC(item.id)}} className="user__descr__button">unfollow</button> : 
+                        <button onClick={() => {this.props.followAC(item.id)}} className="user__descr__button">follow</button>
                         
                     }
                 
@@ -38,8 +38,8 @@ function Users(props) {
                 </div>
             )
         }
-        </div>
-    
+        </div>      
+    }
 }
 
 export default Users
