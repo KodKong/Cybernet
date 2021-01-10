@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Home from './Components/Home/Home'
 import Companys from './Components/Companys/Companys';
 import News_Container from './Components/News/News_Container'
-import { Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import Messages_Container from './Components/Messager/Messages_Container';
 import Users_container from './Components/Users/Users_Container';
 
@@ -17,6 +17,7 @@ function App(props) {
         <Route exact path="/News" render={() => <News_Container/>} /> 
         <Route exact path="/Messages" render={() => <Messages_Container/>} />
         <Route exact path="/Users" render={() => <Users_container/>} />
+        <Redirect from="/" to="/Home" />
         <aside>   
         <Companys />
         </aside> 

@@ -1,7 +1,7 @@
 {
     "items": [
     {
-      "fullName": "Finn Jordan",
+      "fullName": "aaa",
       "id": 1,
       "photos": null,
       "status": "I love orange",
@@ -33,6 +33,5 @@
         "location": {"city": "Toronto", "country": "Canada"}
     }
     ],
-    "totalCount": 30,
     "error": null
   }
