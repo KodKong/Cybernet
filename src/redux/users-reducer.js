@@ -3,6 +3,7 @@ const UNFOLLOW_USER = "UNFOLLOW_USER";
 const SET_USER = "SET_USER"; 
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"; 
 const SET_TOTAL_COUNT = "GET_TOTAL_COUNT"; 
+const SET_LOADING = "SET_LOADING"
 
 let initialState = 
 {
@@ -11,8 +12,8 @@ let initialState =
     ], 
     pageSize: 5, 
     totalCount: 0, 
-    currentValue: 1
-
+    currentValue: 1, 
+    isFetching: true
 }; 
 
 const users_reducer = (state = initialState, action) => 
@@ -54,6 +55,10 @@ const users_reducer = (state = initialState, action) =>
         case SET_TOTAL_COUNT: 
         {
             return {...state, totalCount: action.totalCount}
+        }
+        case SET_LOADING:
+        {
+            return {...state, isFetching: action.isFetching}
         }
         default: return state; 
     }
@@ -97,6 +102,14 @@ export const setTotalCountActionCreator = (item) =>
     return {
         type: SET_TOTAL_COUNT, 
         totalCount: item
+    }
+}
+
+export const setLoadingActionCreator = (isFetching) =>
+{
+    return {
+        type: SET_LOADING, 
+        isFetching
     }
 }
 
