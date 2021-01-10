@@ -65,7 +65,7 @@ const users_reducer = (state = initialState, action) =>
 }
 
 
-export const followActionCreator = (userId) => 
+export const followAC = (userId) => 
 {
     return {
         type: FOLLOW_USER, 
@@ -73,7 +73,7 @@ export const followActionCreator = (userId) =>
     }
 }
 
-export const unfollowActionCreator = (userId) =>
+export const unfollowAC = (userId) =>
 {
     return {
         type: UNFOLLOW_USER, 
@@ -81,7 +81,7 @@ export const unfollowActionCreator = (userId) =>
     }
 }
 
-export const setUserActionCreator = (users) => 
+export const setUsersAC = (users) => 
 {
     return {
         type: SET_USER, 
@@ -89,7 +89,7 @@ export const setUserActionCreator = (users) =>
     }
 }
 
-export const setCurrentPageActionCreator = (pageNumber) => 
+export const setCurrentPageAC = (pageNumber) => 
 {
     return {
         type: SET_CURRENT_PAGE, 
@@ -97,7 +97,7 @@ export const setCurrentPageActionCreator = (pageNumber) =>
     }
 }
 
-export const setTotalCountActionCreator = (item) => 
+export const setTotalCountAC = (item) => 
 {
     return {
         type: SET_TOTAL_COUNT, 
@@ -105,7 +105,7 @@ export const setTotalCountActionCreator = (item) =>
     }
 }
 
-export const setLoadingActionCreator = (isFetching) =>
+export const setLoadingAC = (isFetching) =>
 {
     return {
         type: SET_LOADING, 

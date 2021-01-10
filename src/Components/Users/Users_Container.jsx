@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import { followActionCreator, setCurrentPageActionCreator, setLoadingActionCreator, setTotalCountActionCreator, setUserActionCreator, unfollowActionCreator } from "../../redux/users-reducer";
+import { followAC, setCurrentPageAC, setLoadingAC, setTotalCountAC, setUsersAC, unfollowAC } from "../../redux/users-reducer";
 import * as axios from 'axios'
 import Users from "./Users";
 import Loading from "../Common/Loading";
@@ -62,34 +62,37 @@ let mapStateToProps = (state) =>
     }
 }
 
-let mapDispatchToProps = (dispatch) => 
-{
-    return {
-        followAC: (userId) => {
-            dispatch(followActionCreator(userId)); 
-        }, 
-        unfollowAC: (userId) => {
-            dispatch(unfollowActionCreator(userId)); 
-        }, 
-        setUsersAC: (users) => {
-            dispatch(setUserActionCreator(users)); 
-        }, 
-        setCurrentPageAC: (pageNumber) => 
-        {
-            dispatch(setCurrentPageActionCreator(pageNumber)); 
-        }, 
-        setTotalCountAC: (number) => 
-        {
-            dispatch(setTotalCountActionCreator(number)); 
-        }, 
-        setLoadingAC: (isFetching) => 
-        {
-            dispatch(setLoadingActionCreator(isFetching)); 
-        }
-    }
-}
+// let mapDispatchToProps = (dispatch) => 
+// {
+//     return {
+//         followAC: (userId) => {
+//             dispatch(followActionCreator(userId)); 
+//         }, 
+//         unfollowAC: (userId) => {
+//             dispatch(unfollowActionCreator(userId)); 
+//         }, 
+//         setUsersAC: (users) => {
+//             dispatch(setUserActionCreator(users)); 
+//         }, 
+//         setCurrentPageAC: (pageNumber) => 
+//         {
+//             dispatch(setCurrentPageActionCreator(pageNumber)); 
+//         }, 
+//         setTotalCountAC: (number) => 
+//         {
+//             dispatch(setTotalCountActionCreator(number)); 
+//         }, 
+//         setLoadingAC: (isFetching) => 
+//         {
+//             dispatch(setLoadingActionCreator(isFetching)); 
+//         }
+//     }
+// }
 
 
-const users_container = connect(mapStateToProps,mapDispatchToProps)(UsersAPIContainer); 
+const users_container = connect(mapStateToProps,
+    {followAC, unfollowAC, setUsersAC, 
+    setCurrentPageAC, setTotalCountAC, setLoadingAC})
+        (UsersAPIContainer); 
 
 export default users_container; 

@@ -2,7 +2,7 @@
     "items": [
     {
       "fullName": "aaa",
-      "id": 1,
+      "id": 9,
       "photos": null,
       "status": "I love orange",
       "followed": true, 
@@ -10,7 +10,7 @@
     },
     {
         "fullName": "Kyrie James",
-        "id": 2,
+        "id": 10,
         "photos": "https://games.mail.ru/hotbox/content_files/game/2020/06/16/aed1e04647ec4b64ad63215ef6f57898.jpg",
         "status": "I love apple",
         "followed": false, 
@@ -18,7 +18,7 @@
     },
     {
         "fullName": "Michel Harden",
-        "id": 3,
+        "id": 11,
         "photos": "https://games.mail.ru/hotbox/content_files/game/2020/06/16/aed1e04647ec4b64ad63215ef6f57898.jpg",
         "status": "I love kiwi",
         "followed": false, 
@@ -26,7 +26,7 @@
     },
     {
         "fullName": "Dancan Herro",
-        "id": 4,
+        "id": 12,
         "photos": "https://games.mail.ru/hotbox/content_files/game/2020/06/16/aed1e04647ec4b64ad63215ef6f57898.jpg",
         "status": "I love raspberry",
         "followed": true, 

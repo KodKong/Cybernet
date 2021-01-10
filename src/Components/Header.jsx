@@ -8,7 +8,7 @@ function Header() {
             
             <div className="header__nav">
                 <div className="home">
-                   <NavLink to="/Home">
+                   <NavLink to="/Profile">
                     <img src="" alt=""></img>
                     Главная
                    </NavLink>

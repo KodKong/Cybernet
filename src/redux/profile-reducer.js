@@ -1,5 +1,6 @@
 const updatePost = 'UPDATE-POST'; 
 const addPost = 'ADD-POST';
+const SET_USER_PROFILE = "SET_USER_PROFILE"; 
 
 let initialState =  {
     savePost:
@@ -7,7 +8,8 @@ let initialState =  {
     {id:1, text: "Не стесняйся, скажи сколько?"}, 
     {id:2, text: "Не велика потеря"}
     ],
-    newPost: ''
+    newPost: '', 
+    profile: null
   }; 
 
 const post_reducer = (state = initialState, action) =>
@@ -34,6 +36,10 @@ const post_reducer = (state = initialState, action) =>
             stateCopy.newPost = action.newPost;
             return stateCopy; 
         }
+        case SET_USER_PROFILE: 
+        {
+          return {...state, profile: action.profile}
+        }
         default: return state; 
     }
 }
@@ -46,5 +52,10 @@ export const addPostActionCreator = () =>
   export const updatePostActionCreator = (textPost) => 
   {
     return {type: updatePost, newPost: textPost}; 
+  }
+
+  export const setUserProfile = (profile) => 
+  {
+    return {type: SET_USER_PROFILE, profile}
   }
 export default post_reducer; 
