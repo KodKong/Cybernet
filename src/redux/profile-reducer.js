@@ -9,7 +9,14 @@ let initialState =  {
     {id:2, text: "Не велика потеря"}
     ],
     newPost: '', 
-    profile: null
+    profile: null, 
+    ownerPage: 
+    {
+      fullName: "Henry Dorsett Case",
+      photos: "https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg",
+      status: "I love orange",
+      location: {"city": "Tokyo", "country": "Japan"}
+    }
   }; 
 
 const post_reducer = (state = initialState, action) =>

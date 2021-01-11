@@ -1,25 +1,24 @@
 import React from 'react'; 
 
-function My_Profile() {
+function My_Profile(props) {
     return (
         <div className="main__profile_info">
                 <div className="main__avatar">
-                    <img src="https://proprikol.ru/wp-content/uploads/2020/08/kartinki-kiberpank-32.jpg" alt=""></img>
+                    <img src={props.ownerPage.photos} alt=""></img>
                 </div>
                 <div className="main__info">
                 <div className="main__name">
-                    Henry Dorsett Case
+                    {props.ownerPage.fullName}
                 </div>
                 <div className="main__company_list">
-                    Company:  
+                    Status: 
                     <div className="main__company">
-                       Bokris
+                      {props.ownerPage.status}
                     </div>
                 </div>
-                <div className="buttons-link">
-                    <button>Подписаться</button>
-                    <button class="buttons-link__second">Связаться</button>
-                </div>
+            </div>
+            <div className="user__location">
+                <h1>{props.ownerPage.location.city}</h1><h2>{props.ownerPage.location.country}</h2>
             </div>
             </div>
     )
