@@ -4,6 +4,7 @@ const SET_USER = "SET_USER";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"; 
 const SET_TOTAL_COUNT = "GET_TOTAL_COUNT"; 
 const SET_LOADING = "SET_LOADING"
+const SET_USER_PAGE = "SET_USER_PAGE"
 
 let initialState = 
 {
@@ -13,7 +14,8 @@ let initialState =
     pageSize: 5, 
     totalCount: 0, 
     currentValue: 1, 
-    isFetching: true
+    isFetching: true,
+    userPage: 0
 }; 
 
 const users_reducer = (state = initialState, action) => 
@@ -59,6 +61,10 @@ const users_reducer = (state = initialState, action) =>
         case SET_LOADING:
         {
             return {...state, isFetching: action.isFetching}
+        }
+        case SET_USER_PAGE: 
+        {
+            return {...state, userPage: action.userPage}      
         }
         default: return state; 
     }
@@ -110,6 +116,14 @@ export const setLoadingAC = (isFetching) =>
     return {
         type: SET_LOADING, 
         isFetching
+    }
+}
+
+export const setUserPageAC = (userPage) => 
+{
+    return {
+        type: SET_USER_PAGE, 
+        userPage
     }
 }
 

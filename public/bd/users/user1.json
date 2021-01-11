@@ -1,0 +1,11 @@
+{
+    "user": 
+    {
+      "fullName": "Finn Jordan",
+      "id": 1,
+      "photos": "https://s5o.ru/storage/simple/ru/edt/95/55/a5/81/rued3cdd5ef89.jpg",
+      "status": "I love orange",
+      "followed": true, 
+      "location": {"city": "Berlin", "country": "Germany"}
+    }
+}

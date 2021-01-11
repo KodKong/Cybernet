@@ -2,7 +2,6 @@ import React from 'react';
 
 
 function Posts(props) {
-
   function Post(props) {
       return (<div className="main__post">
       <div className="post-avatar">
@@ -10,16 +9,15 @@ function Posts(props) {
               </div>
               <div className="main__post__text">
                   <div className="main__post__caption">
-                      Lorem, ipsum
+                     {props.name}
                   </div>
                   {props.text} 
               </div>
  
         </div>)
   }
-  debugger
-  let statePosts = props.posts.savePost.map(item => <Post text={item.text} />); 
-    
+
+  let statePosts = props.posts.savePost.map(item => <Post text={item.text} name={props.posts.ownerPage.fullName} />); 
     return (
     <div>
         {

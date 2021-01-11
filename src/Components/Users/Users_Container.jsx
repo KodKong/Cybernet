@@ -10,7 +10,7 @@ class UsersAPIContainer extends React.Component {
     componentDidMount(props)
     {
         this.props.setLoadingAC(true); 
-        axios.get("http://localhost:3000/db1.json")
+        axios.get("http://localhost:3000/bd/db1.json")
         .then(response => {
             this.props.setUsersAC(response.data.items); 
             this.props.setTotalCountAC(response.data.totalCount); 
@@ -21,7 +21,7 @@ class UsersAPIContainer extends React.Component {
     changePage = (pageNumber) => {
         this.props.setLoadingAC(true);
         this.props.setCurrentPageAC(pageNumber); 
-        axios.get(`http://localhost:3000/db${pageNumber}.json`)
+        axios.get(`http://localhost:3000/bd/db${pageNumber}.json`)
         .then(response => {
             this.props.setUsersAC(response.data.items)
             this.props.setLoadingAC(false);

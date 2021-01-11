@@ -32,7 +32,7 @@ function Users(props) {
         props.users.map(item => 
             <div className="user">
             <div className="user__img">
-          <NavLink to={`/Profile/${item.id}`}><img src={item.photos ? item.photos : userImage} alt=""/></NavLink>
+          <NavLink to={`/Profile/` + item.id}><img src={item.photos ? item.photos : userImage} alt=""/></NavLink>
             </div>
             <div className="user__descr">
                 <h1>{item.fullName}</h1>

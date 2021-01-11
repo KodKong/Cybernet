@@ -8,7 +8,7 @@ function Header() {
             
             <div className="header__nav">
                 <div className="home">
-                   <NavLink to="/Profile">
+                   <NavLink to="/Home">
                     <img src="" alt=""></img>
                     Главная
                    </NavLink>
@@ -23,16 +23,16 @@ function Header() {
                         Сообщения</NavLink>
                 </div>
                 <div className="header__notifications">
-                    <a href="#"> 
+                    
                     <NavLink to="/Users"><img src="" alt=""></img>
                         Пользователи</NavLink>
-                    </a>
+                    
                 </div>
                 <div className="header__profile-header">
-                    <a href="#">
+                <NavLink to="/Profile">
                         <img src="" alt=""></img>
                         Profile
-                    </a>
+                        </NavLink>
                 </div>
             </div>
         </div>
