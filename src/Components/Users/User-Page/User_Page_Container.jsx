@@ -2,7 +2,7 @@ import * as axios from 'axios'
 import React from 'react'
 import User_Page from './User_Page'
 import {connect} from "react-redux";
-import { setUserPageAC } from "../../../redux/users-reducer";
+import { setUsersAC } from "../../../redux/users-reducer";
 import { withRouter } from 'react-router-dom';
 import { getUserPage } from "../../Api/Api";
 
@@ -10,28 +10,29 @@ class User_Page_APIContainer extends React.Component {
     
     componentDidMount(props)
     {
+        debugger
         getUserPage()
         .then(data => 
         {
-            this.props.setUserPageAC(data.user); 
+            this.props.setUsersAC(data.items); 
         })
     }
 
     render() {
-        return <User_Page user={this.props.user}/>
+        return <User_Page user={this.props.user} params={this.props.match.params}/>
     }
 }
 
 let mapStateToProps = (state) => 
 {
     return {
-        user: state.usersPage.userPage
+        user: state.usersPage.users
     }
 }
 
 let UserWihRoute = withRouter(User_Page_APIContainer); 
 
 
-const User_Page_Container = connect(mapStateToProps, {setUserPageAC})(UserWihRoute);
+const User_Page_Container = connect(mapStateToProps, {setUsersAC})(UserWihRoute);
 
 export default User_Page_Container

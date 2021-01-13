@@ -15,6 +15,6 @@ export const getPageNumber = (pageNumber) =>
 
 export const getUserPage = () =>
 {
-    return axios.get(`http://localhost:3000/bd/users/user1.json`)
+    return axios.get(`http://localhost:3000/bd/db1.json`)
     .then(response => response.data); 
 }
