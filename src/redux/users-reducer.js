@@ -127,4 +127,9 @@ export const setUserPageAC = (userPage) =>
     }
 }
 
+export const setCurrentUserPage = (id) =>
+{
+    
+}
+
 export default users_reducer; 

@@ -4,16 +4,17 @@ import { followAC, setCurrentPageAC, setLoadingAC, setTotalCountAC, setUsersAC, 
 import * as axios from 'axios'
 import Users from "./Users";
 import Loading from "../Common/Loading";
+import { getAllUser, getPageNumber} from "../Api/Api";
 
 class UsersAPIContainer extends React.Component {
     
     componentDidMount(props)
     {
         this.props.setLoadingAC(true); 
-        axios.get("http://localhost:3000/bd/db1.json")
-        .then(response => {
-            this.props.setUsersAC(response.data.items); 
-            this.props.setTotalCountAC(response.data.totalCount); 
+        getAllUser()
+        .then(data => {
+            this.props.setUsersAC(data.items); 
+            this.props.setTotalCountAC(data.totalCount); 
             this.props.setLoadingAC(false);
         }); 
     }
@@ -21,9 +22,9 @@ class UsersAPIContainer extends React.Component {
     changePage = (pageNumber) => {
         this.props.setLoadingAC(true);
         this.props.setCurrentPageAC(pageNumber); 
-        axios.get(`http://localhost:3000/bd/db${pageNumber}.json`)
-        .then(response => {
-            this.props.setUsersAC(response.data.items)
+        getPageNumber(pageNumber)
+        .then(data => {
+            this.props.setUsersAC(data.items)
             this.props.setLoadingAC(false);
         }); 
     }

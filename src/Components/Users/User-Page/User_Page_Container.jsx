@@ -4,20 +4,17 @@ import User_Page from './User_Page'
 import {connect} from "react-redux";
 import { setUserPageAC } from "../../../redux/users-reducer";
 import { withRouter } from 'react-router-dom';
+import { getUserPage } from "../../Api/Api";
 
 class User_Page_APIContainer extends React.Component {
     
     componentDidMount(props)
     {
-       
-       
-        axios.get(`http://localhost:3000/bd/users/user1.json`)
-        .then(response => 
+        getUserPage()
+        .then(data => 
         {
-            this.props.setUserPageAC(response.data.user); 
+            this.props.setUserPageAC(data.user); 
         })
-       
-       
     }
 
     render() {
