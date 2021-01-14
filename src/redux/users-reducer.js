@@ -1,3 +1,7 @@
+import {getAllUser, getPageNumber} from "../Components/Api/Api"
+
+
+
 const FOLLOW_USER = "FOLLOW_USER"; 
 const UNFOLLOW_USER = "UNFOLLOW_USER"; 
 const SET_USER = "SET_USER"; 
@@ -127,9 +131,31 @@ export const setUserPageAC = (userPage) =>
     }
 }
 
-export const setCurrentUserPage = (id) =>
+export const getUsersThunkCreator = () =>
 {
-    
+    return (dispatch) =>
+    {
+        dispatch(setLoadingAC(true)); 
+        getAllUser()
+        .then(data => {
+            dispatch(setUsersAC(data.items)); 
+            dispatch(setTotalCountAC(data.totalCount)); 
+            dispatch(setLoadingAC(false));
+        }); 
+    }
+}
+export const getPageNumberThunkCreator = (pageNumber) => 
+{
+    return (dispatch) => 
+    {
+        dispatch(setLoadingAC(true));
+        dispatch(setCurrentPageAC(pageNumber)); 
+        getPageNumber(pageNumber)
+        .then(data => {
+            dispatch(setUsersAC(data.items));
+            dispatch(setLoadingAC(false));
+        }); 
+    }
 }
 
 export default users_reducer; 

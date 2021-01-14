@@ -12,10 +12,6 @@ function User_Page(props) {
     {
         return (<Loading />)
     }
-
-    
-    
-    
       return (
       <>
       <div className="main__profile">

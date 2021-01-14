@@ -1,32 +1,27 @@
 import React from "react";
 import {connect} from "react-redux";
-import { followAC, setCurrentPageAC, setLoadingAC, setTotalCountAC, setUsersAC, unfollowAC } from "../../redux/users-reducer";
-import * as axios from 'axios'
+import { followAC, setCurrentPageAC, setLoadingAC, setTotalCountAC, setUsersAC, unfollowAC, getUsersThunkCreator, getPageNumberThunkCreator } from "../../redux/users-reducer";
 import Users from "./Users";
 import Loading from "../Common/Loading";
-import { getAllUser, getPageNumber} from "../Api/Api";
+import {  getPageNumber} from "../Api/Api";
 
 class UsersAPIContainer extends React.Component {
     
     componentDidMount(props)
     {
-        this.props.setLoadingAC(true); 
-        getAllUser()
-        .then(data => {
-            this.props.setUsersAC(data.items); 
-            this.props.setTotalCountAC(data.totalCount); 
-            this.props.setLoadingAC(false);
-        }); 
+        this.props.getUsersThunkCreator(); 
+
+        // this.props.setLoadingAC(true); 
+        // getAllUser()
+        // .then(data => {
+        //     this.props.setUsersAC(data.items); 
+        //     this.props.setTotalCountAC(data.totalCount); 
+        //     this.props.setLoadingAC(false);
+        // }); 
     }
 
     changePage = (pageNumber) => {
-        this.props.setLoadingAC(true);
-        this.props.setCurrentPageAC(pageNumber); 
-        getPageNumber(pageNumber)
-        .then(data => {
-            this.props.setUsersAC(data.items)
-            this.props.setLoadingAC(false);
-        }); 
+        this.props.getPageNumberThunkCreator(pageNumber); 
     }
     
     render() {  
@@ -92,8 +87,8 @@ let mapStateToProps = (state) =>
 
 
 const users_container = connect(mapStateToProps,
-    {followAC, unfollowAC, setUsersAC, 
-    setCurrentPageAC, setTotalCountAC, setLoadingAC})
+    {followAC, unfollowAC,  
+     getUsersThunkCreator, getPageNumberThunkCreator})
         (UsersAPIContainer); 
 
 export default users_container; 
