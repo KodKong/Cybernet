@@ -1,0 +1,24 @@
+{
+    "companys": [
+    {
+      "name": "Tasuba", 
+      "descr": "Компания, производитель электромобилей", 
+       "img": null
+    }, 
+    {
+        "name": "Kalashnikov", 
+      "descr": "Холдинг по производству военного оружия", 
+       "img": null
+    }, 
+    {
+        "name": "Syberdet", 
+        "descr": "Производство кибернетических протезов", 
+         "img": null
+    },
+    {
+        "name": "Fight Doggs", 
+      "descr": "Частное охранное предприятие", 
+       "img": null
+    }
+    ]
+}
