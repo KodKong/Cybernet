@@ -1,4 +1,47 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
+
+
+function Status(props) {
+    
+    const[isEdit,clickObj] = useState(false); 
+
+    const activedMod = () => 
+    {
+        clickObj(true); 
+    }
+    const deactivedMod = () => 
+    {
+        clickObj(false); 
+    }
+    // state = {
+    //     edit: false
+    // }
+
+    // clickObj() 
+    // {
+    //     this.setState({
+    //         edit: true
+    //     }) 
+    // }
+
+    // clickOutObj()
+    // {
+    //     this.setState({
+    //         edit: false  // асинхроно!!!
+    //     })
+    // }
+
+    
+    
+        return (
+            <div>
+              {!isEdit && <span onDoubleClick={activedMod}>{props.status}</span>} 
+              {isEdit && <input autoFocus={true} onBlur={deactivedMod} type="text" value={props.status}></input>}
+            </div>
+        )
+    
+}
+
 
 function My_Profile(props) {
     return (
@@ -13,7 +56,7 @@ function My_Profile(props) {
                 <div className="main__company_list">
                     Status: 
                     <div className="main__company">
-                      {props.ownerPage.status}
+                      <Status status={props.ownerPage.status} />
                     </div>
                 </div>
             </div>

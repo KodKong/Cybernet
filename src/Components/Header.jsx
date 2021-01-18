@@ -29,10 +29,10 @@ function Header() {
                     
                 </div>
                 <div className="header__profile-header">
-                <NavLink to="/Profile">
+                {/* <NavLink to="/Profile">
                         <img src="" alt=""></img>
                         Profile
-                        </NavLink>
+                        </NavLink> */}
                 </div>
             </div>
         </div>
