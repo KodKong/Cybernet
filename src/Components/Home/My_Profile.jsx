@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 
 function Status(props) {
     
+    let newStatus = React.createRef(); 
+
     const[isEdit,clickObj] = useState(false); 
 
     const activedMod = () => 
@@ -13,30 +15,15 @@ function Status(props) {
     {
         clickObj(false); 
     }
-    // state = {
-    //     edit: false
-    // }
-
-    // clickObj() 
-    // {
-    //     this.setState({
-    //         edit: true
-    //     }) 
-    // }
-
-    // clickOutObj()
-    // {
-    //     this.setState({
-    //         edit: false  // асинхроно!!!
-    //     })
-    // }
-
-    
-    
+    let updatePost = () =>
+    {
+        let textStatus = newStatus.current.value; 
+        props.setUserStatus(textStatus); 
+    }
         return (
             <div>
               {!isEdit && <span onDoubleClick={activedMod}>{props.status}</span>} 
-              {isEdit && <input autoFocus={true} onBlur={deactivedMod} type="text" value={props.status}></input>}
+              {isEdit && <input autoFocus={true} onBlur={deactivedMod} type="text" value={props.status} ref={newStatus}></input>}
             </div>
         )
     
@@ -56,7 +43,7 @@ function My_Profile(props) {
                 <div className="main__company_list">
                     Status: 
                     <div className="main__company">
-                      <Status status={props.ownerPage.status} />
+                      <Status status={props.ownerPage.status} setUserStatus={props.setUserStatus}/>
                     </div>
                 </div>
             </div>

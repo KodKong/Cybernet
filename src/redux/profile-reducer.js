@@ -1,6 +1,8 @@
 const updatePost = 'UPDATE-POST'; 
 const addPost = 'ADD-POST';
 const SET_USER_PROFILE = "SET_USER_PROFILE"; 
+const SET_USER_STATUS = "SET_USER_STATUS"; 
+const UPDATE_USER_STATUS = "UPDATE_USER_STATUS";
 
 let initialState =  {
     savePost:
@@ -40,18 +42,23 @@ const post_reducer = (state = initialState, action) =>
         }
         case updatePost: 
         {
-            stateCopy.newPost = action.newPost;
-            return stateCopy; 
+
+          return {...state, newPost: action.newPost}
         }
         case SET_USER_PROFILE: 
         {
           return {...state, profile: action.profile}
         }
+        case SET_USER_STATUS:
+        {
+          debugger
+            return {...state, ...state.ownerPage.status, status: action.status}
+        }
         default: return state; 
     }
 }
 
-export const addPostActionCreator = () => 
+  export const addPostActionCreator = () => 
   {
     return {type: addPost}; 
   }
@@ -65,4 +72,14 @@ export const addPostActionCreator = () =>
   {
     return {type: SET_USER_PROFILE, profile}
   }
+
+  export const setUserStatus = (status) => 
+  {
+    return {type: SET_USER_STATUS, status}
+  }
+
+  // export const updateUserStatus = (status) => 
+
+
+
 export default post_reducer; 
