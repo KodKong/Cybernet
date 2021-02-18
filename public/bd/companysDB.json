@@ -3,22 +3,22 @@
     {
       "name": "Tasuba", 
       "descr": "Компания, производитель электромобилей", 
-       "img": null
+       "img": "https://logowiks.com/wp-content/uploads/2019/10/shell.png.pagespeed.ce.4yqE8iSezV.png"
     }, 
     {
         "name": "Kalashnikov", 
       "descr": "Холдинг по производству военного оружия", 
-       "img": null
+       "img": "http://toplogos.ru/images/logo-kalashnikov.png"
     }, 
     {
         "name": "Syberdet", 
         "descr": "Производство кибернетических протезов", 
-         "img": null
+         "img": "https://i.pinimg.com/564x/2c/85/b6/2c85b64ddf606368a63858c202f3b71d.jpg"
     },
     {
         "name": "Fight Doggs", 
       "descr": "Частное охранное предприятие", 
-       "img": null
+       "img": "https://static10.tgstat.ru/channels/_0/07/07c815aa100815b28b20dd2cb4560178.jpg"
     }
     ]
 }
